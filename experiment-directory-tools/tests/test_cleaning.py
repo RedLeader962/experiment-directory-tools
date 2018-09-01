@@ -22,6 +22,7 @@ def set_up_cwd():
     print(">>> set_up_cwd, Initial was: ", INITIAL_WORKING_DIRECTORY)
     print(">>> os.path.basename: ", os.path.basename(INITIAL_WORKING_DIRECTORY))
 
+    """ Legacy code: was required for multi-project test discovery """
     # if os.path.basename(INITIAL_WORKING_DIRECTORY) == "tests":
     #     os.chdir(RELATIVE_FROM_TESTS_CLEANING_DIR)
     #     print(">>> change cwd to: ", os.getcwd())

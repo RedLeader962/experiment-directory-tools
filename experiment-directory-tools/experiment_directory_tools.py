@@ -47,7 +47,7 @@ def create_run_directory(experiments_root_dir, run_name="", UUID=None):
     :param experiments_root_dir:
     :param run_name: (optional) The name of the run.
     :param UUID: (optional) A universal unique identifier or a any unique id
-    :return: The experimentation run directory name
+    :return: The experimentation run directory name with the following form: "/Run--{run_name}-{UID}-{Timestamp}"
     """
 
     # --- setup the root directory if necessary ------------------------------------------------------------------------
@@ -56,6 +56,8 @@ def create_run_directory(experiments_root_dir, run_name="", UUID=None):
     # --- create a new run directory -----------------------------------------------------------------------------------
     utc_now = datetime.utcnow().strftime("%Y%m%d%H%M%S")
     run_name = run_name.replace(" ", "_")
+    if not UUID:
+        UUID = ""
     experiment_run_directory = "/Run--{}-{}{}-{}".format(run_name,
                                                          "-" * (30 - len(run_name) - len(str(UUID))),
                                                          UUID,
