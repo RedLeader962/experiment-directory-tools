@@ -1,14 +1,15 @@
 # Experiment Directory Tools
 Tools to managed an experimentation run folder and create run directory based on creation date
 
-by Luc Coupal
+Author: Luc Coupal
+
+The package have two main function:
+ - ***create_run_directory***: A utility function to create a run directory based on creation date.
+ - ***clean_result_directory***: A utility function to clean a experimentation run folder based on creation date.
 
 
-***create_run_directory***: A utility function to create a run directory based on creation date.
+Structure ex:
 
-***clean_result_directory***: A utility function to clean a experimentation run folder based on creation date.
-
-    ex:
         /experiment_root_dir
             /current_run
                 /Run--myExperiment-112250425472---20180725223506
@@ -17,7 +18,9 @@ by Luc Coupal
                     ...
             /past_run
                 /Run--myExperiment-222260435473---20180725223507
+                    ...
                 /Run--myExperiment-232222435474---20180725223508
+                    ...
                 ...
 
 Usage note: use the `clean_result_directory` function before `create_run_directory` otherwise all the newly
